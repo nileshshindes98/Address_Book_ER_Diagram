@@ -126,7 +126,24 @@ mysql>  select * from address_book;
 
 mysql>
 
+==========================================================================
+#uc5-Ability to delete a person using person's name
+==========================================================================
 
+mysql>  DELETE FROM `address_book` WHERE `firstName` = 'Amar';
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from address_book;
++-----------+----------+-----------+---------+------------+--------+------------+---------------------+
+| firstName | lastName | address   | city    | state      | zip    | phoneNo    | email               |
++-----------+----------+-----------+---------+------------+--------+------------+---------------------+
+| Omkar     | Patil    |  Mg road  | Lal Kot | Delhi      | 110068 | 723929393  | omshinde6@gmail.com |
+| Rohit     | Mane     | Satara    | Satara  | Maharastra | 415001 | 8097543520 | rohit123@gmail.com  |
+| Tushar    | More     | Panvel    | Mumbai  | Maharastra | 410206 | 9055005197 | iyogesh8@gmail.com  |
++-----------+----------+-----------+---------+------------+--------+------------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql>
 
 
 
