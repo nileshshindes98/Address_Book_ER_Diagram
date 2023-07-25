@@ -47,6 +47,26 @@ mysql> select database();
 
 mysql>
 
+==========================================================================
+#uc3-Ability to insert new Contacts to Address Book
+==========================================================================
+
+mysql> insert  into address_book(firstName,lastname,address,city,state,zip,phoneNo,email) values ('Tushar','More','Panvel','Mumbai','Maharastra','410206','8097856509','iyogesh8@gmail.com'), ('Amar','Nikam',' Khanda colony','Navi Mumbai','Maharastra','410206','8865153580','amr99@gmail.com'), ('Rohit','Mane','Satara','Satara','Maharastra','415001','8097543520','rohit123@gmail.com'), ('Omkar','Shinde',' Mg road ','Lal Kot','Delhi','110068','723929393','omshinde6@gmail.com');
+Query OK, 4 rows affected (0.18 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from address_book;
++-----------+----------+----------------+-------------+------------+--------+------------+---------------------+
+| firstName | lastName | address        | city        | state      | zip    | phoneNo    | email               |
++-----------+----------+----------------+-------------+------------+--------+------------+---------------------+
+| Amar      | Nikam    |  Khanda colony | Navi Mumbai | Maharastra | 410206 | 8865153580 | amr99@gmail.com     |
+| Omkar     | Shinde   |  Mg road       | Lal Kot     | Delhi      | 110068 | 723929393  | omshinde6@gmail.com |
+| Rohit     | Mane     | Satara         | Satara      | Maharastra | 415001 | 8097543520 | rohit123@gmail.com  |
+| Tushar    | More     | Panvel         | Mumbai      | Maharastra | 410206 | 8097856509 | iyogesh8@gmail.com  |
++-----------+----------+----------------+-------------+------------+--------+------------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql>
 
 
 
