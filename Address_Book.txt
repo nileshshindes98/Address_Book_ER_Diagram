@@ -145,6 +145,37 @@ mysql> select * from address_book;
 
 mysql>
 
+==========================================================================
+#uc6-Ability to Retrieve Person belonging to a City or State from
+#the Address BookAbility to delete a person using person's name
+==========================================================================
+
+mysql> SELECT * FROM address_book WHERE city = 'Satara';
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+| firstName | lastName | address | city   | state      | zip    | phoneNo    | email              |
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+| Rohit     | Mane     | Satara  | Satara | Maharastra | 415001 | 8097543520 | rohit123@gmail.com |
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM address_book WHERE state = 'Maharastra';
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+| firstName | lastName | address | city   | state      | zip    | phoneNo    | email              |
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+| Rohit     | Mane     | Satara  | Satara | Maharastra | 415001 | 8097543520 | rohit123@gmail.com |
+| Tushar    | More     | Panvel  | Mumbai | Maharastra | 410206 | 9055005197 | iyogesh8@gmail.com |
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+2 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+
 
 
 
