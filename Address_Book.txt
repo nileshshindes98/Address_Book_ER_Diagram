@@ -48,6 +48,39 @@ mysql> select database();
 mysql>
 
 ==========================================================================
+#uc2-Ability to create a Address Book Table with first and last names,
+#address, city, state, zip, phone number and email as its attributes
+==========================================================================
+
+mysql> CREATE TABLE address_book( firstName VARCHAR(25) NOT NULL,
+    -> lastName VARCHAR(25) NOT NULL,
+    -> address VARCHAR(45) NOT NULL,
+    -> city VARCHAR(15) NOT NULL,
+    -> state VARCHAR(15) NOT NULL,
+    -> zip VARCHAR(6) NOT NULL,
+    -> phoneNo VARCHAR(13) NOT NULL,
+    -> email VARCHAR(20) NOT NULL,
+    -> PRIMARY KEY (firstName));
+Query OK, 0 rows affected (0.39 sec)
+
+mysql> desc address_book;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| firstName | varchar(25) | NO   | PRI | NULL    |       |
+| lastName  | varchar(25) | NO   |     | NULL    |       |
+| address   | varchar(45) | NO   |     | NULL    |       |
+| city      | varchar(15) | NO   |     | NULL    |       |
+| state     | varchar(15) | NO   |     | NULL    |       |
+| zip       | varchar(6)  | NO   |     | NULL    |       |
+| phoneNo   | varchar(13) | NO   |     | NULL    |       |
+| email     | varchar(20) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+8 rows in set (0.06 sec)
+
+mysql>
+
+==========================================================================
 #uc3-Ability to insert new Contacts to Address Book
 ==========================================================================
 
@@ -63,6 +96,31 @@ mysql> select * from address_book;
 | Omkar     | Shinde   |  Mg road       | Lal Kot     | Delhi      | 110068 | 723929393  | omshinde6@gmail.com |
 | Rohit     | Mane     | Satara         | Satara      | Maharastra | 415001 | 8097543520 | rohit123@gmail.com  |
 | Tushar    | More     | Panvel         | Mumbai      | Maharastra | 410206 | 8097856509 | iyogesh8@gmail.com  |
++-----------+----------+----------------+-------------+------------+--------+------------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql>
+
+==========================================================================
+#uc4-Ability to edit existing contact person using their name
+==========================================================================
+
+mysql>  UPDATE address_book SET phoneNo = '9055005197'  WHERE firstName = 'Tushar';
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE address_book SET lastName = 'Patil' WHERE firstName = 'Omkar';
+Query OK, 1 row affected (0.20 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  select * from address_book;
++-----------+----------+----------------+-------------+------------+--------+------------+---------------------+
+| firstName | lastName | address        | city        | state      | zip    | phoneNo    | email               |
++-----------+----------+----------------+-------------+------------+--------+------------+---------------------+
+| Amar      | Nikam    |  Khanda colony | Navi Mumbai | Maharastra | 410206 | 8865153580 | amr99@gmail.com     |
+| Omkar     | Patil    |  Mg road       | Lal Kot     | Delhi      | 110068 | 723929393  | omshinde6@gmail.com |
+| Rohit     | Mane     | Satara         | Satara      | Maharastra | 415001 | 8097543520 | rohit123@gmail.com  |
+| Tushar    | More     | Panvel         | Mumbai      | Maharastra | 410206 | 9055005197 | iyogesh8@gmail.com  |
 +-----------+----------+----------------+-------------+------------+--------+------------+---------------------+
 4 rows in set (0.00 sec)
 
